@@ -209,7 +209,7 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo.png" class="logo" alt="Logo" />
+      <img src="https://s3.amazonaws.com/white-label-content/HealNow/HealNowClock.png" class="logo" alt="Healnowclock" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
         </div>
@@ -251,11 +251,9 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<p>Welcome to the HealNow API! You can use our API to access HealNow API endpoints, which can help you to create a beautiful payments experience for pharmacies and their customers.</p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<p>We currently only have language bindings in Shell! You can view code examples in the dark area to the right, and you when we have more language bindings supported you&#39;ll be able to switch the programming language of the examples with the tabs in the top right.</p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>To authorize, use this code:</p>
@@ -268,14 +266,14 @@ curl <span class="s2">"api_endpoint_here"</span>
 <p>Make sure to replace <code>JWT_TOKEN</code> with your own generated token.</p>
 </blockquote>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<p>HealNow uses JWT tokens to allow access to the API. You can register a new HealNow JWT secret key at our <a href="http://example.com/developers">developer portal</a>.</p>
 
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+<p>HealNow expects for the JWT secret key to be used to generate the signature of the JWT token for all API requests to the server in a header that looks like the following:</p>
 
-<p><code>Authorization: meowmeowmeow</code></p>
+<p><code>Authorization: Bearer JWT_TOKEN</code></p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>JWT_TOKEN</code> with your personal token.
 </aside>
 <h1 id='merchants'>Merchants</h1><h2 id='create-merchant-account'>Create Merchant Account</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"api_endpoint_here"</span>
   -X POST
@@ -288,9 +286,9 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 </span><span class="err">merchant_params</span><span class="p">:</span><span class="w"> </span><span class="err">yep</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
+<p>This endpoint creates a merchant account.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
+<p><code>POST https://api_endpoint/api/merchants</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
