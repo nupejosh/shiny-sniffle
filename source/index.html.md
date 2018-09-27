@@ -16,11 +16,9 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the HealNow API! You can use our API to access HealNow API endpoints, which can help you to create a beautiful payments experience for pharmacies and their customers.
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
+We currently only have language bindings in Shell! You can view code examples in the dark area to the right, and you when we have more language bindings supported you'll be able to switch the programming language of the examples with the tabs in the top right.
 
 # Authentication
 
@@ -35,14 +33,15 @@ curl "api_endpoint_here"
 
 > Make sure to replace `JWT_TOKEN` with your own generated token.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+HealNow uses JWT tokens to allow access to the API. You can register a new HealNow JWT secret key at our [developer portal](http://example.com/developers).
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+HealNow expects for the JWT secret key to be used to generate the signature of the JWT token for all API requests to the server in a header that looks like the following:
 
-`Authorization: meowmeowmeow`
+
+`Authorization: Bearer JWT_TOKEN`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>JWT_TOKEN</code> with your personal token.
 </aside>
 
 # Merchants
@@ -63,11 +62,11 @@ merchant_params: yep
 }
 ```
 
-This endpoint retrieves all kittens.
+This endpoint creates a merchant account.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`POST https://api_endpoint/api/merchants`
 
 ### Query Parameters
 
